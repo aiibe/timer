@@ -59,6 +59,17 @@ body,
 		justify-content: space-between;
 		align-items: center;
 		font-size: 9rem;
+
+		.minutes,
+		.seconds {
+			width: 40%;
+			text-align: center;
+		}
+
+		.separator {
+			text-align: center;
+			width: 20%;
+		}
 	}
 
 	.controls {

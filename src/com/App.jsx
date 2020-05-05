@@ -47,7 +47,7 @@ export default function App() {
 						useGrouping: false,
 					})}
 				</div>
-				<div>:</div>
+				<div className='separator'>:</div>
 				<div className='seconds'>
 					{(time % 60).toLocaleString('en-US', {
 						minimumIntegerDigits: 2,
