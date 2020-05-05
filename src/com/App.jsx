@@ -1,11 +1,20 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Play, Reset, Pause } from '../icons'
 
 export default function App() {
 	const interval = useRef()
-	const [time, setTime] = useState(25 * 60)
+	const [time, setTime] = useState(3)
 	const [status, setStatus] = useState(false)
 
+	// Stop countdown
+	useEffect(() => {
+		if (time == 0) {
+			clearInterval(interval.current)
+			setStatus(false)
+		}
+	}, [time])
+
+	// Start/Resume
 	function toggleState() {
 		if (!status) {
 			setStatus(true)
@@ -18,15 +27,27 @@ export default function App() {
 		}
 	}
 
+	console.log('render')
+
 	return (
 		<div className='clock-frame'>
 			<div className='task'>
 				<h3>Focus on this task</h3>
 			</div>
 			<div className='digits'>
-				<div className='minutes'>00</div>
+				<div className='minutes'>
+					{Math.floor(time / 60).toLocaleString('en-US', {
+						minimumIntegerDigits: 2,
+						useGrouping: false,
+					})}
+				</div>
 				<div>:</div>
-				<div className='seconds'>{time}</div>
+				<div className='seconds'>
+					{(time % 60).toLocaleString('en-US', {
+						minimumIntegerDigits: 2,
+						useGrouping: false,
+					})}
+				</div>
 			</div>
 			<div className='controls'>
 				<button className='button-rounded' onClick={toggleState}>
