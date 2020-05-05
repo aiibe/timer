@@ -151,6 +151,11 @@ select {
 	margin-bottom: 1.5rem;
 }
 
+input:focus,
+button:focus {
+	outline: none;
+}
+
 img {
 	display: block;
 	width: 100%;
