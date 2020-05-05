@@ -40,7 +40,7 @@ export default function App() {
 		!status && setTime(defaultTime)
 	}
 
-	console.log('render')
+	// console.log('render')
 
 	return (
 		<div className='clock-frame'>
