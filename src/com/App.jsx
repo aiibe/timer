@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Play, Reset, Pause } from '../icons'
 
+const defaultTime = 25 * 60
+
 export default function App() {
 	const interval = useRef()
 	const [task, setTask] = useState('Focus on this task')
-	const [time, setTime] = useState(25 * 60)
+	const [time, setTime] = useState(defaultTime)
 	const [status, setStatus] = useState(false)
 
 	// Stop countdown
@@ -31,6 +33,11 @@ export default function App() {
 	// Edit task
 	function editTask(event) {
 		setTask(event.target.value)
+	}
+
+	// Reset
+	function reset() {
+		!status && setTime(defaultTime)
 	}
 
 	console.log('render')
@@ -63,7 +70,7 @@ export default function App() {
 						<Play className='icon-button' />
 					)}
 				</button>
-				<button className='button-rounded'>
+				<button className='button-rounded' onClick={reset}>
 					<Reset className='icon-button' />
 				</button>
 			</div>
