@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './src/scss/style.scss'
 
-const App = () => {
-	return <div>Hello World</div>
-}
+import App from './src/com/App'
 
 ReactDOM.render(<App />, document.getElementById('app'))
