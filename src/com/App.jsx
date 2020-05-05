@@ -45,7 +45,12 @@ export default function App() {
 	return (
 		<div className='clock-frame'>
 			<div className='task'>
-				<input type='text' value={task} onChange={editTask} />
+				<input
+					type='text'
+					value={task}
+					onChange={editTask}
+					title='Rename your task'
+				/>
 			</div>
 			<div className='digits'>
 				<div className='minutes'>
@@ -63,14 +68,18 @@ export default function App() {
 				</div>
 			</div>
 			<div className='controls'>
-				<button className='button-rounded' onClick={toggleState}>
+				<button
+					className='button-rounded'
+					onClick={toggleState}
+					title='Play/Resume timer'
+				>
 					{status ? (
 						<Pause className='icon-button' />
 					) : (
 						<Play className='icon-button' />
 					)}
 				</button>
-				<button className='button-rounded' onClick={reset}>
+				<button className='button-rounded' onClick={reset} title='Reset timer'>
 					<Reset className='icon-button' />
 				</button>
 			</div>
