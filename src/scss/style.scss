@@ -14,7 +14,12 @@ body,
 
 #app {
 	display: flex;
-	background-color: tomato;
+	background: rgb(253, 93, 65);
+	background: linear-gradient(
+		0deg,
+		rgba(253, 93, 65, 1) 0%,
+		rgba(253, 156, 65, 1) 100%
+	);
 }
 
 .button-rounded {
