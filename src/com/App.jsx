@@ -3,7 +3,8 @@ import { Play, Reset, Pause } from '../icons'
 
 export default function App() {
 	const interval = useRef()
-	const [time, setTime] = useState(3)
+	const [task, setTask] = useState('Focus on this task')
+	const [time, setTime] = useState(25 * 60)
 	const [status, setStatus] = useState(false)
 
 	// Stop countdown
@@ -27,12 +28,17 @@ export default function App() {
 		}
 	}
 
+	// Edit task
+	function editTask(event) {
+		setTask(event.target.value)
+	}
+
 	console.log('render')
 
 	return (
 		<div className='clock-frame'>
 			<div className='task'>
-				<h3>Focus on this task</h3>
+				<input type='text' value={task} onChange={editTask} />
 			</div>
 			<div className='digits'>
 				<div className='minutes'>
