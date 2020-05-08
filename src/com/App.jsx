@@ -59,7 +59,7 @@ export default function App() {
 
 	return (
 		<div className='frame'>
-			<Helmet>
+			<Helmet defer={false}>
 				<meta charSet='utf-8' />
 				<title>
 					{status
