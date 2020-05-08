@@ -15,11 +15,7 @@ body,
 #app {
 	display: flex;
 	background: rgb(253, 93, 65);
-	background: linear-gradient(
-		0deg,
-		rgba(253, 93, 65, 1) 0%,
-		rgba(253, 156, 65, 1) 100%
-	);
+	background: linear-gradient(0deg, rgba(253, 93, 65, 1) 0%, #fd7941 100%);
 }
 
 .button-rounded {
@@ -28,18 +24,21 @@ body,
 	padding: 0;
 	position: relative;
 	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 1);
+
+	&:active {
+		transform: scale(0.98);
+	}
 
 	.icon-button {
-		fill: #fff;
+		fill: rgb(253, 93, 65);
 		margin: auto;
 		opacity: 1;
-		stroke: #fff;
 		width: 2rem;
 	}
 }
 
-.clock-frame {
+.frame {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
@@ -59,11 +58,32 @@ body,
 		}
 	}
 
+	.clock {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.ring {
+		circle {
+			transition: stroke-dashoffset 0.3s;
+			transform: rotate(-90deg);
+			transform-origin: 50% 50%;
+		}
+	}
+
 	.digits {
+		position: absolute;
+		top: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		font-size: 9rem;
+		font-size: 6rem;
+		width: 18rem;
+		margin: auto;
+		height: 100%;
 
 		.minutes,
 		.seconds {
@@ -80,5 +100,7 @@ body,
 	.controls {
 		display: flex;
 		justify-content: space-between;
+		width: 80%;
+		margin: auto;
 	}
 }
