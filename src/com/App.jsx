@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import { Play, Reset, Pause } from '../icons'
 import Ring from './Ring'
 
@@ -42,10 +43,31 @@ export default function App() {
 		!status && setTime(defaultTime)
 	}
 
-	// console.log('render')
+	// Display
+	const min = Math.floor(time / 60).toLocaleString('en-US', {
+		minimumIntegerDigits: 2,
+		useGrouping: false,
+	})
+
+	const sec = (time % 60).toLocaleString('en-US', {
+		minimumIntegerDigits: 2,
+		useGrouping: false,
+	})
 
 	return (
 		<div className='frame'>
+			<Helmet>
+				<meta charSet='utf-8' />
+				<title>
+					{status
+						? `${min}:${sec} running`
+						: time !== defaultTime
+						? `${min}:${sec} paused`
+						: 'Pomoto'}
+				</title>
+				<link rel='canonical' href='http://mysite.com/example' />
+			</Helmet>
+
 			<div className='task'>
 				<input
 					type='text'
@@ -63,19 +85,9 @@ export default function App() {
 				/>
 
 				<div className='digits'>
-					<div className='minutes'>
-						{Math.floor(time / 60).toLocaleString('en-US', {
-							minimumIntegerDigits: 2,
-							useGrouping: false,
-						})}
-					</div>
+					<div className='minutes'>{min}</div>
 					<div className='separator'>:</div>
-					<div className='seconds'>
-						{(time % 60).toLocaleString('en-US', {
-							minimumIntegerDigits: 2,
-							useGrouping: false,
-						})}
-					</div>
+					<div className='seconds'>{sec}</div>
 				</div>
 			</div>
 			<div className='controls'>
