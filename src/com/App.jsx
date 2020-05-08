@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Play, Reset, Pause } from '../icons'
+import Ring from './Ring'
 
-const defaultTime = 25 * 60
+// const defaultTime = 25 * 60
+const defaultTime = 25
 
 export default function App() {
 	const interval = useRef()
@@ -14,6 +16,7 @@ export default function App() {
 		if (time == 0) {
 			clearInterval(interval.current)
 			setStatus(false)
+			setTime(defaultTime)
 		}
 	}, [time])
 
@@ -43,7 +46,7 @@ export default function App() {
 	// console.log('render')
 
 	return (
-		<div className='clock-frame'>
+		<div className='frame'>
 			<div className='task'>
 				<input
 					type='text'
@@ -52,19 +55,28 @@ export default function App() {
 					title='Rename your task'
 				/>
 			</div>
-			<div className='digits'>
-				<div className='minutes'>
-					{Math.floor(time / 60).toLocaleString('en-US', {
-						minimumIntegerDigits: 2,
-						useGrouping: false,
-					})}
-				</div>
-				<div className='separator'>:</div>
-				<div className='seconds'>
-					{(time % 60).toLocaleString('en-US', {
-						minimumIntegerDigits: 2,
-						useGrouping: false,
-					})}
+
+			<div className='clock'>
+				<Ring
+					radius={150}
+					stroke={10}
+					progress={((defaultTime - time) * 100) / defaultTime}
+				/>
+
+				<div className='digits'>
+					<div className='minutes'>
+						{Math.floor(time / 60).toLocaleString('en-US', {
+							minimumIntegerDigits: 2,
+							useGrouping: false,
+						})}
+					</div>
+					<div className='separator'>:</div>
+					<div className='seconds'>
+						{(time % 60).toLocaleString('en-US', {
+							minimumIntegerDigits: 2,
+							useGrouping: false,
+						})}
+					</div>
 				</div>
 			</div>
 			<div className='controls'>
