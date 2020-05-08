@@ -14,8 +14,8 @@ export default ({ radius, stroke, progress }) => {
 					cx={radius}
 					fill='none'
 					stroke='#c44d2b'
-					stroke-width={stroke}
-					stroke-linecap='round'
+					strokeWidth={stroke}
+					strokeLinecap='round'
 					opacity='0.25'
 				/>
 				<circle
@@ -24,8 +24,8 @@ export default ({ radius, stroke, progress }) => {
 					cx={radius}
 					fill='none'
 					stroke='#fff'
-					stroke-width={stroke}
-					stroke-linecap='round'
+					strokeWidth={stroke}
+					strokeLinecap='round'
 					style={{ strokeDashoffset }}
 					strokeDasharray={circumference + ' ' + circumference}
 				/>
