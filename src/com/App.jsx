@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { Play, Reset, Pause } from '../icons'
 import Ring from './Ring'
+import Alarm from '../assets/bell.ogg'
 
 const defaultTime = 25 * 60
 
@@ -10,6 +11,7 @@ export default function App() {
 	const [task, setTask] = useState('Focus on this task')
 	const [time, setTime] = useState(defaultTime)
 	const [status, setStatus] = useState(false)
+	const alarm = new Audio(Alarm)
 
 	// Stop countdown
 	useEffect(() => {
@@ -17,6 +19,7 @@ export default function App() {
 			clearInterval(interval.current)
 			setStatus(false)
 			setTime(defaultTime)
+			alarm.play()
 		}
 	}, [time])
 
