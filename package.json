@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "parcel index.html",
-		"build": "rm -rf ./dist && parcel build index.html --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt dist/ && cp src/assets/sitemap.xml dist/"
+		"build": "rm -rf ./dist && parcel build index.html --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt dist/ && node src/crawler.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -21,6 +21,7 @@
 	"dependencies": {
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
-		"react-helmet": "^6.0.0"
+		"react-helmet": "^6.0.0",
+		"sitemap-generator": "^8.4.2"
 	}
 }
