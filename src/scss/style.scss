@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,700&display=swap');
 
 // Variables
 $font-color: #fff;
@@ -7,15 +7,28 @@ $fonts: 'Poppins', Arial, Helvetica, sans-serif;
 @import './base.scss';
 
 html,
-body,
-#app {
+body {
 	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	background: rgb(253, 93, 65);
+	background: linear-gradient(0deg, rgba(253, 93, 65, 1) 0%, #fd7941 100%);
 }
 
 #app {
 	display: flex;
-	background: rgb(253, 93, 65);
-	background: linear-gradient(0deg, rgba(253, 93, 65, 1) 0%, #fd7941 100%);
+	flex: 1;
+}
+
+header {
+	h1 {
+		font-size: 3rem;
+		text-align: center;
+		margin-bottom: 0;
+	}
 }
 
 .button-rounded {
