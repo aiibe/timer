@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Play, Reset, Pause } from '../icons'
 import Ring from './Ring'
 
-// const defaultTime = 25 * 60
-const defaultTime = 25
+const defaultTime = 25 * 60
 
 export default function App() {
 	const interval = useRef()
