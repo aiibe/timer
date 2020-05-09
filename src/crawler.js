@@ -2,7 +2,7 @@ const SitemapGenerator = require('sitemap-generator')
 
 const generator = SitemapGenerator('http://aiibe.github.io/pomoto', {
 	stripQuerystring: false,
-	filepath: 'dist/sitemap.xml',
+	filepath: 'public/sitemap.xml',
 	lastMod: true,
 })
 
