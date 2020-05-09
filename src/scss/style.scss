@@ -16,6 +16,11 @@ body {
 	flex-direction: column;
 	background: rgb(253, 93, 65);
 	background: linear-gradient(0deg, rgba(253, 93, 65, 1) 0%, #fd7941 100%);
+	-webkit-app-region: drag;
+}
+
+button {
+	-webkit-app-region: no-drag;
 }
 
 #app {

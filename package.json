@@ -2,10 +2,12 @@
 	"name": "timer",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "main.js",
 	"scripts": {
 		"start": "parcel ./index.html",
-		"build": "rm -rf public && parcel build ./index.html -d public --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt public/ && node src/crawler.js"
+		"build": "rm -rf build && parcel build ./index.html -d build --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js",
+		"electron-dev": "electron . --start-dev",
+		"electron": "electron ."
 	},
 	"keywords": [],
 	"author": "",
@@ -15,6 +17,8 @@
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
 		"babel-preset-react": "^6.24.1",
+		"electron": "^8.2.5",
+		"electron-reload": "^1.5.0",
 		"node-sass": "^4.14.1",
 		"parcel-bundler": "^1.12.4"
 	},
