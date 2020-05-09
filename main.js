@@ -1,5 +1,5 @@
 // Basic init
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
 const url = require('url')
 const args = process.argv.slice(1)
@@ -13,8 +13,16 @@ if (serve) {
 // To avoid being garbage collected
 let mainWindow
 
+// Remove menu toolbar
+Menu.setApplicationMenu(null)
+
 app.on('ready', () => {
-	let mainWindow = new BrowserWindow({ width: 375, height: 667, frame: false })
+	let mainWindow = new BrowserWindow({
+		width: 375,
+		height: 667,
+		title: 'Pomoto',
+		resizable: false,
+	})
 
 	const startUrl = serve
 		? 'http://localhost:1234'

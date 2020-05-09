@@ -12,14 +12,14 @@
 		"postinstall": "electron-builder install-app-deps"
 	},
 	"build": {
-		"appId": "com.pomoto.app",
+		"appId": "com.Pomoto.app",
 		"files": [
 			"main.js",
 			"build/*"
 		],
 		"linux": {
+			"category": "Utility",
 			"target": [
-				"AppImage",
 				"deb"
 			]
 		}
