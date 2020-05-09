@@ -8,7 +8,6 @@ const defaultTime = 25 * 60
 
 export default function App() {
 	const interval = useRef()
-	const [task, setTask] = useState('Focus on this task')
 	const [time, setTime] = useState(defaultTime)
 	const [status, setStatus] = useState(false)
 	const alarm = new Audio(Alarm)
@@ -34,11 +33,6 @@ export default function App() {
 			setStatus(false)
 			clearInterval(interval.current)
 		}
-	}
-
-	// Edit task
-	function editTask(event) {
-		setTask(event.target.value)
 	}
 
 	// Reset
@@ -74,9 +68,9 @@ export default function App() {
 			<div className='task'>
 				<input
 					type='text'
-					value={task}
-					onChange={editTask}
 					title='Rename your task'
+					placeholder='Focus on this task'
+					autoFocus
 				/>
 			</div>
 
