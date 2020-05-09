@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "parcel index.html",
-		"build": "rm -rf ./dist && parcel build index.html --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt dist/ && node src/crawler.js"
+		"start": "parcel src/index.html",
+		"build": "rm -rf ./dist && parcel build src/index.html --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt dist/ && node src/crawler.js"
 	},
 	"keywords": [],
 	"author": "",
