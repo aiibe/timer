@@ -4,6 +4,14 @@ Pomoto has been built to help me work in intervals of time. Just a <u>simple</u>
 
 Live : https://aiibe.github.io/pomoto/
 
+#### Install
+
+```
+git clone https://github.com/aiibe/pomoto.git
+cd pomoto
+npm install
+```
+
 #### Known issues
 
-- On safari, alarm sound is not working.
+- Alarm sound is not working on Safari (see issue Webkit disable autoplay).
