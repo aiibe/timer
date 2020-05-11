@@ -1,27 +1,52 @@
 {
-	"name": "timer",
+	"name": "pomoto",
+	"productName": "Pomoto",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "A react based Pomodoro timer",
+	"main": "main.js",
 	"scripts": {
 		"start": "parcel ./index.html",
-		"build": "rm -rf public && parcel build ./index.html -d public --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt public/ && node src/crawler.js"
+		"build": "rm -rf build && parcel build ./index.html -d build --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
+		"electron-dev": "electron . --start-dev",
+		"electron": "electron .",
+		"electron-build": "electron-builder",
+		"postinstall": "electron-builder install-app-deps"
 	},
-	"keywords": [],
-	"author": "",
+	"build": {
+		"appId": "com.pomoto.app",
+		"files": [
+			"main.js",
+			"build/*"
+		],
+		"linux": {
+			"category": "Utility",
+			"target": [
+				"deb"
+			]
+		}
+	},
+	"keywords": [
+		"react",
+		"parcel",
+		"electron"
+	],
+	"author": "Souk <souksavanh.sy@gmail.com>",
 	"license": "ISC",
 	"devDependencies": {
 		"babel-core": "^6.26.3",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
 		"babel-preset-react": "^6.24.1",
+		"electron": "^8.2.5",
+		"electron-builder": "^22.6.0",
+		"electron-reload": "^1.5.0",
 		"node-sass": "^4.14.1",
-		"parcel-bundler": "^1.12.4"
+		"parcel-bundler": "^1.12.4",
+		"sitemap-generator": "^8.4.2"
 	},
 	"dependencies": {
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
-		"react-helmet": "^6.0.0",
-		"sitemap-generator": "^8.4.2"
+		"react-helmet": "^6.0.0"
 	}
 }
