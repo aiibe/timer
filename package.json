@@ -12,7 +12,7 @@
 		"postinstall": "electron-builder install-app-deps"
 	},
 	"build": {
-		"appId": "com.Pomoto.app",
+		"appId": "com.pomoto.app",
 		"files": [
 			"main.js",
 			"build/*"
