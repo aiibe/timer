@@ -4,7 +4,7 @@ import { Play, Reset, Pause } from '../icons'
 import Ring from './Ring'
 import Alarm from '../assets/bell.ogg'
 
-const defaultTime = 25 * 60
+const defaultTime = 5
 
 export default function App() {
 	const interval = useRef()
@@ -74,7 +74,7 @@ export default function App() {
 				/>
 			</div>
 
-			<div className='clock'>
+			<div className='clock-holder'>
 				<Ring
 					radius={150}
 					stroke={10}
@@ -82,9 +82,11 @@ export default function App() {
 				/>
 
 				<div className='digits'>
-					<div className='minutes'>{min}</div>
-					<div className='separator'>:</div>
-					<div className='seconds'>{sec}</div>
+					<div className='clock'>
+						<div className='minutes'>{min}</div>
+						<div className='separator'>:</div>
+						<div className='seconds'>{sec}</div>
+					</div>
 				</div>
 			</div>
 			<div className='controls'>

@@ -5,7 +5,7 @@
 	"description": "A react based Pomodoro timer",
 	"main": "main.js",
 	"scripts": {
-		"start": "parcel ./index.html",
+		"start": "parcel ./index.html -d temp/",
 		"build": "rm -rf build && parcel build ./index.html -d build --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
 		"electron-dev": "electron . --start-dev",
 		"electron": "electron .",
