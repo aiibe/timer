@@ -4,7 +4,7 @@ import { Play, Reset, Pause } from '../icons'
 import Ring from './Ring'
 import Alarm from '../assets/bell.ogg'
 
-const defaultTime = 25
+const defaultTime = 25 * 60
 
 export default function App() {
 	const interval = useRef()
