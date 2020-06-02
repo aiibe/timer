@@ -4,7 +4,7 @@ import { Play, Reset, Pause } from '../icons'
 import Ring from './Ring'
 import Alarm from '../assets/bell.ogg'
 
-const defaultTime = 5
+const defaultTime = 25
 
 export default function App() {
 	const interval = useRef()
@@ -62,7 +62,7 @@ export default function App() {
 						? `${min}:${sec} paused`
 						: 'Pomoto'}
 				</title>
-				<link rel='canonical' href='http://mysite.com/example' />
+				<link rel='canonical' href='https://aiibe.github.io/pomoto' />
 			</Helmet>
 
 			<div className='task'>

@@ -31,7 +31,7 @@
 		"electron"
 	],
 	"author": "Souk <souksavanh.sy@gmail.com>",
-	"license": "ISC",
+	"license": "MIT",
 	"devDependencies": {
 		"babel-core": "^6.26.3",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
