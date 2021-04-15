@@ -1,8 +1,9 @@
 ## Pomoto - A React based Pomodoro timer
 
-Pomoto has been built to help me work in intervals of time. Just a <u>simple</u> timer that reminds me to stop and take a break every 25 min.
+Just a <u>simple</u> timer that applies the famous Pomodoro technique.
+Built with React.
 
-Live : https://aiibe.github.io/pomoto/
+Try it out : https://aiibe.github.io/pomoto/
 
 #### Install
 
@@ -15,3 +16,13 @@ npm install
 #### Known issues
 
 - Alarm sound is not working on Safari (see issue Webkit disable autoplay).
+
+
+#### Story
+
+Hi, my name is Souk from Lyon, France.
+
+I built Pomoto for my own personal usage and for my portfolio.
+Every self-taught developer knows well how often we forget the time while coding.
+You may already know the Pomodoro technique that helps you take a break every 25 minutes. It prevents you from deep-diving too long on a task.
+There are so many Pomodoro apps around the web that I started to question how difficult it is to build. Then, I took it as a challenge.
