@@ -22,7 +22,7 @@ npm start
 ### Development with Electron
 
 ```
-
+npm run electron-dev
 ```
 
 #### Known issues

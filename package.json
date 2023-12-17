@@ -3,6 +3,7 @@
   "productName": "Pomoto",
   "version": "1.0.0",
   "description": "A react web based + electron Pomodoro timer",
+  "main": "main.js",
   "scripts": {
     "start": "parcel ./index.html",
     "build": "rm -rf build && parcel build ./index.html --dist-dir build --no-source-maps --public-url ./ --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
