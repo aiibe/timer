@@ -5,12 +5,15 @@
   "description": "A react web based + electron Pomodoro timer",
   "main": "main.js",
   "scripts": {
-    "start": "parcel ./index.html",
+    "start": "parcel ./index.html --dist-dir temp",
     "build": "rm -rf build && parcel build ./index.html --dist-dir build --no-source-maps --public-url ./ --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
     "electron-dev": "electron . --start-dev",
     "electron": "electron .",
-    "electron-build": "electron-builder",
+    "electron-build": "electron-builder -c.mac.identity=null",
     "postinstall": "electron-builder install-app-deps"
+  },
+  "targets": {
+    "main": false
   },
   "build": {
     "appId": "com.pomoto.app",
