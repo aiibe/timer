@@ -49,6 +49,21 @@ npm run electron-build
 
 <em>To configure for other platforms, check [Electron Builder](https://www.electron.build/index.html)</em>
 
+### Deploy as Single Page App on GitHub Pages
+
+Required : Make sure in Github settings/pages 'Build and deployment' the branch is set to `master` and is built from `/docs`
+
+Run
+
+```
+npm run deploy:gh-pages
+git add .
+git commit -m 'deploy new version'
+git push
+```
+
+Done ! The updated version will be deployed in a minute or two.
+
 #### Known issues
 
 - Alarm sound is not working on Safari (see issue Webkit disable autoplay).

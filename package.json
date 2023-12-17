@@ -7,6 +7,7 @@
   "scripts": {
     "start": "parcel ./index.html --dist-dir temp",
     "build": "rm -rf build && parcel build ./index.html --dist-dir build --no-source-maps --public-url ./ --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
+    "deploy:gh-pages": "rm -rf docs && npm run build && mkdir -p docs && cp -rn build/* docs/",
     "electron-dev": "electron . --start-dev",
     "electron": "electron .",
     "electron-build": "electron-builder -c.mac.identity=null",
