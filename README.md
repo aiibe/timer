@@ -13,10 +13,21 @@ cd pomoto
 npm install
 ```
 
+### Development in-browser
+
+```
+npm start
+```
+
+### Development with Electron
+
+```
+
+```
+
 #### Known issues
 
 - Alarm sound is not working on Safari (see issue Webkit disable autoplay).
-
 
 #### Story
 

@@ -1,52 +1,56 @@
 {
-	"name": "pomoto",
-	"productName": "Pomoto",
-	"version": "1.0.0",
-	"description": "A react based Pomodoro timer",
-	"main": "main.js",
-	"scripts": {
-		"start": "parcel ./index.html -d temp/",
-		"build": "rm -rf build && parcel build ./index.html -d build --no-source-maps --public-url ./ --experimental-scope-hoisting --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
-		"electron-dev": "electron . --start-dev",
-		"electron": "electron .",
-		"electron-build": "electron-builder",
-		"postinstall": "electron-builder install-app-deps"
-	},
-	"build": {
-		"appId": "com.pomoto.app",
-		"files": [
-			"main.js",
-			"build/*"
-		],
-		"linux": {
-			"category": "Utility",
-			"target": [
-				"deb"
-			]
-		}
-	},
-	"keywords": [
-		"react",
-		"parcel",
-		"electron"
-	],
-	"author": "Souk <souksavanh.sy@gmail.com>",
-	"license": "MIT",
-	"devDependencies": {
-		"babel-core": "^6.26.3",
-		"babel-plugin-transform-object-rest-spread": "^6.26.0",
-		"babel-preset-env": "^1.7.0",
-		"babel-preset-react": "^6.24.1",
-		"electron": "^12.0.4",
-		"electron-builder": "^22.6.0",
-		"electron-reload": "^1.5.0",
-		"node-sass": "^4.14.1",
-		"parcel-bundler": "^1.12.4",
-		"sitemap-generator": "^8.4.2"
-	},
-	"dependencies": {
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-helmet": "^6.0.0"
-	}
+  "name": "pomoto",
+  "productName": "Pomoto",
+  "version": "1.0.0",
+  "description": "A react based Pomodoro timer",
+  "scripts": {
+    "start": "parcel ./index.html",
+    "build": "rm -rf build && parcel build ./index.html --dist-dir build --no-source-maps --public-url ./ --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
+    "electron-dev": "electron . --start-dev",
+    "electron": "electron .",
+    "electron-build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.pomoto.app",
+    "files": [
+      "main.js",
+      "build/*"
+    ],
+    "linux": {
+      "category": "Utility",
+      "target": [
+        "deb"
+      ]
+    }
+  },
+  "keywords": [
+    "react",
+    "parcel",
+    "electron"
+  ],
+  "author": "Souk <souksavanh.sy@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/plugin-transform-object-rest-spread": "^7.23.4",
+    "@parcel/transformer-sass": "^2.10.3",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/react-helmet": "^6.1.11",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "node-sass": "^9.0.0",
+    "parcel": "^2.10.3",
+    "process": "^0.11.10",
+    "sitemap-generator": "^8.5.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
+  }
 }
