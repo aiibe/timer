@@ -1,12 +1,7 @@
 function TaskTitle() {
   return (
     <div className="task">
-      <textarea
-        title="Rename your task"
-        placeholder="Focus on this task"
-        autoFocus
-        rows={4}
-      />
+      <textarea placeholder="Focus on this task" autoFocus rows={20} />
     </div>
   );
 }
