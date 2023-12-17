@@ -1,33 +1,38 @@
 import { useState, useRef, useEffect } from "react";
-import { Helmet } from "react-helmet";
-import { Play, Reset, Pause } from "./components/icons";
-import Ring from "./components/Ring";
+
 import Alarm from "./assets/bell.ogg";
 
-const defaultTime = 25 * 60;
+import TaskTitle from "./components/TaskTitle";
+import Header from "./components/Header";
+import Timer from "./components/Timer";
+import Control from "./components/Control";
+
+export const DEFAULT_TIME = 25 * 60;
 
 export default function App() {
   const interval = useRef<NodeJS.Timeout>();
-  const [time, setTime] = useState(defaultTime);
+  const [currentTime, setCurrentTime] = useState(DEFAULT_TIME);
   const [status, setStatus] = useState(false);
   const alarm = new Audio(Alarm);
 
-  // Stop countdown
+  /**
+   * Ring when count down ends
+   */
   useEffect(() => {
-    if (time == 0) {
+    if (currentTime == 0) {
       clearInterval(interval.current);
       setStatus(false);
-      setTime(defaultTime);
+      setCurrentTime(DEFAULT_TIME);
       alarm.play();
     }
-  }, [time]);
+  }, [currentTime]);
 
-  // Start/Resume
-  function toggleState() {
+  // Start/Resume timer
+  function startResume() {
     if (!status) {
       setStatus(true);
       interval.current = setInterval(() => {
-        setTime((time) => time - 1);
+        setCurrentTime((time) => time - 1);
       }, 1000);
     } else {
       setStatus(false);
@@ -35,76 +40,31 @@ export default function App() {
     }
   }
 
-  // Reset
+  // Reset timer
   function reset() {
-    !status && setTime(defaultTime);
+    !status && setCurrentTime(DEFAULT_TIME);
   }
 
-  // Display
-  const min = Math.floor(time / 60).toLocaleString("en-US", {
+  // Display time
+  const min = Math.floor(currentTime / 60).toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
-  const sec = (time % 60).toLocaleString("en-US", {
+  const sec = (currentTime % 60).toLocaleString("en-US", {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
   return (
     <div className="frame">
-      <Helmet defer={false}>
-        <meta charSet="utf-8" />
-        <title>
-          {status
-            ? `${min}:${sec} running`
-            : time !== defaultTime
-            ? `${min}:${sec} paused`
-            : "Pomoto"}
-        </title>
-        <link rel="canonical" href="https://aiibe.github.io/pomoto" />
-      </Helmet>
+      <Header status={status} currentTime={currentTime} min={min} sec={sec} />
 
-      <div className="task">
-        <input
-          type="text"
-          title="Rename your task"
-          placeholder="Focus on this task"
-          autoFocus
-        />
-      </div>
+      <TaskTitle />
 
-      <div className="clock-holder">
-        <Ring
-          radius={150}
-          stroke={10}
-          progress={((defaultTime - time) * 100) / defaultTime}
-        />
+      <Timer currentTime={currentTime} min={min} sec={sec} />
 
-        <div className="digits">
-          <div className="clock">
-            <div className="minutes">{min}</div>
-            <div className="separator">:</div>
-            <div className="seconds">{sec}</div>
-          </div>
-        </div>
-      </div>
-      <div className="controls">
-        <button
-          className="button-rounded"
-          onClick={toggleState}
-          title="Play/Resume timer"
-        >
-          {status ? (
-            <Pause className="icon-button" />
-          ) : (
-            <Play className="icon-button" />
-          )}
-        </button>
-        <button className="button-rounded" onClick={reset} title="Reset timer">
-          <Reset className="icon-button" />
-        </button>
-      </div>
+      <Control status={status} startResume={startResume} reset={reset} />
     </div>
   );
 }
