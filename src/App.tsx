@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { Play, Reset, Pause } from "../icons";
-import Ring from "./Ring";
-import Alarm from "../assets/bell.ogg";
+import { Play, Reset, Pause } from "./components/icons";
+import Ring from "./components/Ring";
+import Alarm from "./assets/bell.ogg";
 
 const defaultTime = 25 * 60;
 

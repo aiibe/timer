@@ -2,7 +2,7 @@
   "name": "pomoto",
   "productName": "Pomoto",
   "version": "1.0.0",
-  "description": "A react based Pomodoro timer",
+  "description": "A react web based + electron Pomodoro timer",
   "scripts": {
     "start": "parcel ./index.html",
     "build": "rm -rf build && parcel build ./index.html --dist-dir build --no-source-maps --public-url ./ --no-cache && cp src/assets/robots.txt build/ && node src/crawler.js && cp src/assets/icon.icns build/",
@@ -27,7 +27,8 @@
   "keywords": [
     "react",
     "parcel",
-    "electron"
+    "electron",
+    "pomodoro"
   ],
   "author": "Souk <souksavanh.sy@gmail.com>",
   "license": "MIT",
