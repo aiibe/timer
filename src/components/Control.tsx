@@ -1,4 +1,4 @@
-import { Pause, Play, Reset } from "./icons";
+import { Pause, Play, Reset } from './icons';
 
 interface Props {
   status: boolean;

@@ -1,6 +1,10 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-function _play(props) {
+interface Props {
+  className: string;
+}
+
+function _play(props: Props) {
   return (
     <svg viewBox="0 0 448 512" {...props}>
       <path
@@ -11,7 +15,7 @@ function _play(props) {
   );
 }
 
-function _reset(props) {
+function _reset(props: Props) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path
@@ -24,7 +28,7 @@ function _reset(props) {
   );
 }
 
-function _pause(props) {
+function _pause(props: Props) {
   return (
     <svg viewBox="0 0 512 512" {...props}>
       <path

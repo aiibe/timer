@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from 'react';
 
-import Alarm from "./assets/bell.ogg";
+import Bell from './assets/bell.ogg';
 
-import TaskTitle from "./components/TaskTitle";
-import Header from "./components/Header";
-import Timer from "./components/Timer";
-import Control from "./components/Control";
+import TaskTitle from './components/TaskTitle';
+import Header from './components/Header';
+import Timer from './components/Timer';
+import Control from './components/Control';
 
 export const DEFAULT_TIME = 25 * 60;
 
@@ -13,7 +13,7 @@ export default function App() {
   const interval = useRef<NodeJS.Timeout>();
   const [currentTime, setCurrentTime] = useState(DEFAULT_TIME);
   const [status, setStatus] = useState(false);
-  const alarm = new Audio(Alarm);
+  const alarm = useRef(new Audio(Bell));
 
   /**
    * Ring when count down ends
@@ -23,7 +23,7 @@ export default function App() {
       clearInterval(interval.current);
       setStatus(false);
       setCurrentTime(DEFAULT_TIME);
-      alarm.play();
+      alarm.current.play();
     }
   }, [currentTime]);
 
@@ -46,12 +46,12 @@ export default function App() {
   }
 
   // Display time
-  const min = Math.floor(currentTime / 60).toLocaleString("en-US", {
+  const min = Math.floor(currentTime / 60).toLocaleString('en-US', {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
 
-  const sec = (currentTime % 60).toLocaleString("en-US", {
+  const sec = (currentTime % 60).toLocaleString('en-US', {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });

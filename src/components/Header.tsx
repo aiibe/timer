@@ -1,6 +1,6 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
-import { DEFAULT_TIME } from "../App";
+import { DEFAULT_TIME } from '../App';
 
 interface Props {
   status: boolean;
@@ -19,8 +19,8 @@ function Header(props: Props) {
         {status
           ? `${min}:${sec} running`
           : currentTime !== DEFAULT_TIME
-          ? `${min}:${sec} paused`
-          : "Pomoto"}
+            ? `${min}:${sec} paused`
+            : 'Pomoto'}
       </title>
       <link rel="canonical" href="https://aiibe.github.io/pomoto" />
     </Helmet>
