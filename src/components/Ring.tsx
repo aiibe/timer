@@ -1,4 +1,12 @@
-export default ({ radius, stroke, progress }) => {
+interface Props {
+  radius: number;
+  stroke: number;
+  progress: number;
+}
+
+function Ring(props: Props) {
+  const { radius, stroke, progress } = props;
+
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = -circumference - (progress / 100) * circumference;
@@ -25,9 +33,11 @@ export default ({ radius, stroke, progress }) => {
           strokeWidth={stroke}
           strokeLinecap="round"
           style={{ strokeDashoffset }}
-          strokeDasharray={circumference + " " + circumference}
+          strokeDasharray={circumference + ' ' + circumference}
         />
       </svg>
     </div>
   );
-};
+}
+
+export default Ring;

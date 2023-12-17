@@ -1,5 +1,6 @@
-import { DEFAULT_TIME } from "../App";
-import Ring from "./Ring";
+import { DEFAULT_TIME } from '../App';
+
+import Ring from './Ring';
 
 interface Props {
   currentTime: number;
