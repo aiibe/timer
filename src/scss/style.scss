@@ -1,131 +1,137 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,700&display=swap");
 
 // Variables
 $font-color: #fff;
-$fonts: 'Poppins', Arial, Helvetica, sans-serif;
+$fonts: "Poppins", Arial, Helvetica, sans-serif;
 
-@import './base.scss';
+@import "./base.scss";
 
 html,
 body {
-	height: 100%;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	background: rgb(253, 93, 65);
-	background: linear-gradient(0deg, rgba(253, 93, 65, 1) 0%, #fd7941 100%);
+  display: flex;
+  flex-direction: column;
+  background: rgb(253, 93, 65);
+  background: linear-gradient(0deg, rgba(253, 93, 65, 1) 0%, #fd7941 100%);
 }
 
 #app {
-	display: flex;
-	flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 header {
-	h1 {
-		font-size: 3rem;
-		text-align: center;
-		margin-bottom: 0;
-	}
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
 }
 
 .button-rounded {
-	width: 7rem;
-	height: 7rem;
-	padding: 0;
-	position: relative;
-	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 1);
+  width: 7rem;
+  height: 7rem;
+  padding: 0;
+  position: relative;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
 
-	&:active {
-		transform: scale(0.98);
-	}
+  &:active {
+    transform: scale(0.98);
+  }
 
-	.icon-button {
-		fill: rgb(253, 93, 65);
-		margin: auto;
-		opacity: 1;
-		width: 2rem;
-	}
+  .icon-button {
+    fill: rgb(253, 93, 65);
+    margin: auto;
+    opacity: 1;
+    width: 2rem;
+  }
 }
 
 .frame {
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	width: 30rem;
-	font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 30rem;
+  font-weight: bold;
 
-	.task {
-		text-align: center;
+  .task {
+    text-align: center;
 
-		input[type='text'] {
-			font-family: inherit;
-			color: inherit;
-			font-weight: bold;
-			font-size: 2.4rem;
-			text-align: center;
-			border: 0;
+    textarea {
+      font-family: inherit;
+      color: inherit;
+      font-weight: bold;
+      font-size: 2.4rem;
+      text-align: center;
+      border: none;
+	  resize: none;
 
-			&::placeholder {
-				color: inherit;
-				opacity: 0.3;
-			}
-		}
-	}
+      &::placeholder {
+        color: inherit;
+        opacity: 0.3;
+      }
 
-	.clock-holder {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
 
-	.ring {
-		circle {
-			transition: stroke-dashoffset 0.3s;
-			transform: rotate(-90deg);
-			transform-origin: 50% 50%;
-		}
-	}
+  .clock-holder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-	.digits {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+  .ring {
+    circle {
+      transition: stroke-dashoffset 0.3s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  }
 
-		.clock {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			font-size: 6rem;
-			width: 18rem;
-			margin: auto;
-			height: 100%;
+  .digits {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-			.minutes,
-			.seconds {
-				width: 40%;
-				text-align: center;
-			}
+    .clock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 6rem;
+      width: 18rem;
+      margin: auto;
+      height: 100%;
 
-			.separator {
-				text-align: center;
-				width: 20%;
-			}
-		}
-	}
+      .minutes,
+      .seconds {
+        width: 40%;
+        text-align: center;
+      }
 
-	.controls {
-		display: flex;
-		justify-content: space-between;
-		width: 80%;
-		margin: auto;
-	}
+      .separator {
+        text-align: center;
+        width: 20%;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+  }
 }
