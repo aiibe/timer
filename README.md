@@ -1,9 +1,10 @@
-## Pomoto - A React based Pomodoro timer
+## Pomoto - A minimal Pomodoro timer built with Electron and React
 
-Just a <u>simple</u> timer that applies the famous Pomodoro technique.
-Built with React.
+A straightforward timer implementing the renowned Pomodoro technique, developed using React and Electron.
 
 Try it out : https://aiibe.github.io/pomoto/
+
+Download desktop app : https://github.com/aiibe/pomoto/releases
 
 #### Install
 
@@ -33,7 +34,7 @@ First, let Parcel bundle the app in `build` directory using
 npm run build
 ```
 
-Then build a local executable app to check if everything is correct with
+Then build a local executable app to check if everything is working fine with
 
 ```
 npm run electron
@@ -72,4 +73,4 @@ Done ! The updated version will be deployed in a minute or two.
 
 Hi, my name is Souk from Lyon, France.
 
-I created Pomoto both for my personal use and as a valuable addition to my portfolio. As any self-taught developer understands, it's easy to lose track of time when immersed in coding. If you're familiar with the Pomodoro technique, which encourages short breaks every 25 minutes to avoid prolonged focus on a single task, you'll appreciate its effectiveness. With numerous Pomodoro apps available online, I began to ponder the challenge of creating one myself, and that's when I decided to take it on.
+I created Pomoto both for my personal use and as a valuable addition to my portfolio. As any developer understands, it's easy to lose track of time when immersed in coding. If you're familiar with the Pomodoro technique, which encourages short breaks every 25 minutes to avoid prolonged focus on a single task, you'll appreciate its effectiveness. With numerous Pomodoro apps available online, I began to ponder the challenge of creating one myself, and that's when I decided to take it on.
