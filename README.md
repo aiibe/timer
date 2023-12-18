@@ -39,7 +39,7 @@ Then build a local executable app to check if everything is correct with
 npm run electron
 ```
 
-Ready for release and distribution ? Let's pack it up.
+Ready for release and distribution ? Let's pack it up for Linux and Mac
 
 ```
 npm run electron-build
