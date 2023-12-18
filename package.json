@@ -10,7 +10,7 @@
     "deploy:gh-pages": "rm -rf docs && npm run build && mkdir -p docs && cp -rn build/* docs/",
     "electron-dev": "electron . --start-dev",
     "electron": "electron .",
-    "electron-build": "electron-builder -c.mac.identity=null",
+    "electron-build": "electron-builder -c.mac.identity=null -ml",
     "postinstall": "electron-builder install-app-deps"
   },
   "targets": {
