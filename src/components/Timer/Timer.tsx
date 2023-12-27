@@ -64,7 +64,7 @@ function Timer() {
   });
 
   const percentProgress =
-    ((currentTime - currentTime) * 100) / duration.current;
+    ((duration.current - currentTime) * 100) / duration.current;
 
   return (
     <Fragment>
