@@ -32,6 +32,30 @@ header {
   }
 }
 
+.button {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgb(253, 93, 65);
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid #37b1fd;
+  }
+
+  &:active {
+    &:not([disabled]) {
+      transform: scale(0.98);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: initial;
+  }
+}
+
 .button-rounded {
   width: 7rem;
   height: 7rem;
@@ -40,8 +64,23 @@ header {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 1);
 
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid #37b1fd;
+  }
+
   &:active {
-    transform: scale(0.98);
+    &:not([disabled]) {
+      transform: scale(0.98);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: initial;
   }
 
   .icon-button {
@@ -131,8 +170,21 @@ header {
 
   .controls {
     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: auto;
+    flex-direction: column;
+    gap: 20px;
+
+    .start-pause {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: auto;
+    }
+
+    .set-duration {
+      display: flex;
+      width: 92%;
+      margin: auto;
+      justify-content: space-between;
+    }
   }
 }

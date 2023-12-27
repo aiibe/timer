@@ -1,22 +1,22 @@
 import { Helmet } from 'react-helmet';
 
-import { DEFAULT_TIME } from '../App';
+import { DEFAULT_TIME } from './Timer/Timer';
 
 interface Props {
-  status: boolean;
+  isRunning: boolean;
   currentTime: number;
   min: string;
   sec: string;
 }
 
 function Header(props: Props) {
-  const { status, currentTime, min, sec } = props;
+  const { isRunning, currentTime, min, sec } = props;
 
   return (
     <Helmet defer={false}>
       <meta charSet="utf-8" />
       <title>
-        {status
+        {isRunning
           ? `${min}:${sec} running`
           : currentTime !== DEFAULT_TIME
             ? `${min}:${sec} paused`
