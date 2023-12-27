@@ -24,14 +24,6 @@ body {
   flex: 1;
 }
 
-header {
-  h1 {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 0;
-  }
-}
-
 .button {
   background-color: rgba(255, 255, 255, 1);
   color: rgb(253, 93, 65);
@@ -40,7 +32,7 @@ header {
     opacity: 0.8;
   }
 
-  &:focus {
+  &:focus-visible {
     outline: 2px solid #37b1fd;
   }
 
@@ -68,7 +60,7 @@ header {
     opacity: 0.8;
   }
 
-  &:focus {
+  &:focus-visible {
     outline: 2px solid #37b1fd;
   }
 
@@ -94,9 +86,13 @@ header {
 .frame {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 30rem;
+  margin: 0 auto;
   font-weight: bold;
+
+  /* Styles for screens 901 pixels and wider */
+  @media screen and (min-width: 370px) {
+    margin: auto;
+  }
 
   .task {
     text-align: center;
@@ -109,7 +105,8 @@ header {
       text-align: center;
       border: none;
       resize: none;
-      height: 120px;
+      height: 8.5rem;
+      margin: 0;
 
       &::placeholder {
         color: inherit;
