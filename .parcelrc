@@ -1,7 +1,7 @@
 {
   "extends": "@parcel/config-default",
   "transformers": {
-    "*.ogg": [
+    "*.mp3": [
       "@parcel/transformer-raw"
     ]
   }

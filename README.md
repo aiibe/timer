@@ -68,6 +68,7 @@ Done ! The updated version will be deployed in a minute or two.
 #### Known issues
 
 - Alarm sound is not working on Safari (see issue Webkit disable autoplay).
+- If an error `Cannot find module '..'` occured, open up `.parcelrc` file and hit save.
 
 #### Story
 
