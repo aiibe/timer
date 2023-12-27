@@ -54,7 +54,7 @@ npm run electron-build
 
 Required : Make sure in Github settings/pages 'Build and deployment' the branch is set to `master` and is built from `/docs`
 
-Run
+Run on master branch
 
 ```
 npm run deploy:gh-pages
