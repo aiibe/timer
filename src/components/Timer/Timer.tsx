@@ -76,7 +76,7 @@ function Timer() {
       />
 
       <div className="clock-holder">
-        <Ring radius={150} stroke={10} progress={percentProgress} />
+        <Ring radius={130} stroke={10} progress={percentProgress} />
         <div className="digits">
           <div className="clock">
             <div className="minutes">{min}</div>
